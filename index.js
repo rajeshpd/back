@@ -21,11 +21,11 @@ dotenv.config({ path: "./config/config.env" });
 connectDB();
 
 //Route files
-// const bootcamps = require("./routes/bootcamps");
-// const courses = require("./routes/courses");
+const Fundriser = require("./routes/fundriser");
+ const Category = require("./routes/category");
  const auth = require("./routes/auth");
-// const users = require("./routes/users");
-// const reviews = require("./routes/reviews");
+ const users = require("./routes/users");
+const Donor = require("./routes/donor");
 
 //initialize app with express
  const app = express();
@@ -67,11 +67,11 @@ app.use(hpp());
 app.use(cors());
 
 //Mount routers
-// app.use("/api/v1/bootcamps", bootcamps);
-// app.use("/api/v1/courses", courses);
+ app.use("/api/v1/fundriser", Fundriser);
+app.use("/api/v1/category", Category);
  app.use("/api/v1/auth", auth);
-// app.use("/api/v1/users", users);
-// app.use("/api/v1/reviews", reviews);
+ app.use("/api/v1/users", users);
+ app.use("/api/v1/donor", Donor);
 
 // app.use(errorHandler);
 
