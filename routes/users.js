@@ -1,5 +1,6 @@
 const express = require("express");
 const {
+  getAllUser,
   getUsers,
   getUser,
   createUser,
@@ -20,8 +21,10 @@ router.use(authorize("admin"));
 router
   .route("/")
   .get(advancedResults(User), getUsers)
-  .post(createUser);
+  
+  router.route("/").post(createUser);
 
+router.route("/user").get(advancedResults(User), getAllUser);
 router
   .route("/:id")
   .get(getUser)

@@ -20,7 +20,7 @@ const FundriserSchema = new mongoose.Schema(
     phone: {
         type: String,
         required: [true, "Please add a number"],
-        maxlength: [10, "Phone number can not be longer than 20 characters"]
+        maxlength: [10, "Phone number can not be longer than 10 characters"]
         
       },
       email: {
@@ -76,7 +76,7 @@ const FundriserSchema = new mongoose.Schema(
       },
       doctorcontact: {
         type: String,
-        maxlength: [10, "Phone number can not be longer than 20 characters"]
+        maxlength: [10, "Phone number can not be longer than 10 characters"]
       },
       photo: {
         type: String,

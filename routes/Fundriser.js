@@ -4,6 +4,7 @@ const {
   getfundriser,
   createfundriser,
   updatefundriser,
+  fundriserPhotoUpload,
   deletefundriser,
 } = require("../controllers/Fundriser");
 
@@ -12,12 +13,12 @@ const router = express.Router();
 
 const advancedResults = require("../middleware/advancedResults");
 const { protect, authorize } = require("../middleware/auth");
-
+router.route("/photo").post(protect, fundriserPhotoUpload);
 
 router
   .route("/")
   .get(advancedResults(Fundriser, "admin"), getfundrisers)
-  .post(protect, authorize("fundriser", "admin"), createfundriser);
+  .post(protect, authorize("fundriser", "admin"), createfundriser)
 
 router
   .route("/:fundriserId")

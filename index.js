@@ -26,7 +26,7 @@ const Fundriser = require("./routes/fundriser");
  const auth = require("./routes/auth");
  const users = require("./routes/users");
 const Donor = require("./routes/donor");
-
+const reviews = require("./routes/reviews");
 //initialize app with express
  const app = express();
 
@@ -72,7 +72,7 @@ app.use("/api/v1/category", Category);
  app.use("/api/v1/auth", auth);
  app.use("/api/v1/users", users);
  app.use("/api/v1/donor", Donor);
-
+app.use("/api/v1/reviews",reviews);
 // app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
